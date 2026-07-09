@@ -19,3 +19,21 @@
 
     
 
+<script>
+function reply() {
+  let msg = document.getElementById("message").value.toLowerCase();
+  let answer = "";
+
+  if (msg.includes("नमस्ते") || msg.includes("hello")) {
+    answer = "🙏 नमस्ते! मैं Geeta AI हूँ।";
+  } else if (msg.includes("तुम कौन हो")) {
+    answer = "मैं Geeta AI हूँ, आपकी मदद के लिए तैयार हूँ।";
+  } else if (msg.includes("धन्यवाद")) {
+    answer = "😊 आपका स्वागत है!";
+  } else {
+    answer = "आपने पूछा: " + msg;
+  }
+
+  document.getElementById("answer").innerText = answer;
+}
+</script>
