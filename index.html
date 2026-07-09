@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geeta AI</title>
+</head>
+<body>
+  <h1>🤖 Geeta AI</h1>
+  <p>Welcome to Geeta AI!</p>
+
+  <input type="text" id="message" placeholder="अपना सवाल लिखें">
+  <button onclick="reply()">Send</button>
+
+  <p id="answer"></p>
+
+  <script>
+    function reply() {
+      let msg = document.getElementById("message").value;
+      document.getElementById("answer").innerText =
+        "आपने पूछा: " + msg;
+    }
+  </script>
+</body>
+</html>
+<h1>Geeta AI</h1>
+
