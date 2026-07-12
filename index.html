@@ -108,5 +108,47 @@ document.getElementById("chat").scrollHeight;
 }
 </script>
 
-</body>
+</body>function send(){
+
+let input = document.getElementById("msg");
+let chat = document.getElementById("chat");
+
+let msg = input.value.trim();
+
+if(msg==="") return;
+
+chat.innerHTML += "<div class='user'>"+msg+"</div>";
+
+let reply="";
+
+let text=msg.toLowerCase();
+
+if(text.includes("नमस्ते") || text.includes("hello")){
+reply="🙏 नमस्ते! मैं Geeta AI हूँ।";
+}
+else if(text.includes("तुम कौन हो")){
+reply="मैं Geeta AI हूँ।";
+}
+else if(text.includes("समय")){
+reply="अभी का समय: "+new Date().toLocaleTimeString();
+}
+else if(text.includes("तारीख")){
+reply="आज की तारीख: "+new Date().toLocaleDateString("hi-IN");
+}
+else{
+reply="यह फीचर अभी तैयार हो रहा है। जल्द ही मैं AI की तरह हर सवाल का जवाब दूँगा।";
+}
+
+chat.innerHTML += "<div class='bot'>"+reply+"</div>";
+
+input.value="";
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+document.getElementById("msg").addEventListener("keypress",function(e){
+if(e.key==="Enter"){
+send();
+}
+});
 </html>
