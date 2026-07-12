@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geeta AI</title>
 
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#ff9800;
+    padding:15px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+#chat{
+    height:70vh;
+    overflow-y:auto;
+    padding:15px;
+}
+
+.bot,.user{
+    padding:12px;
+    border-radius:10px;
+    margin:10px 0;
+    max-width:80%;
+}
+
+.bot{
+    background:#1e293b;
+}
+
+.user{
+    background:#2563eb;
+    margin-left:auto;
+}
+
+.bottom{
+    display:flex;
+    padding:10px;
+    background:#111827;
+}
+
+input{
+    flex:1;
+    padding:12px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    margin-left:10px;
+    padding:12px 20px;
+    font-size:18px;
+    background:#ff9800;
+    border:none;
+    border-radius:8px;
+    color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>🕉️ Geeta AI</header>
+
+<div id="chat">
+<div class="bot">
+🙏 नमस्ते! मैं Geeta AI हूँ। अपना सवाल पूछिए।
+</div>
+</div>
+
+<div class="bottom">
+<input id="msg" placeholder="अपना सवाल लिखें...">
+<button onclick="send()">भेजें</button>
+</div>
+
+<script>
+function send(){
+
+let msg=document.getElementById("msg").value;
+
+if(msg=="") return;
+
+document.getElementById("chat").innerHTML+=
+"<div class='user'>"+msg+"</div>";
+
+let reply="मैं अभी सीख रहा हूँ। जल्द ही OpenAI GPT से जुड़कर बेहतर उत्तर दूँगा।";
+
+document.getElementById("chat").innerHTML+=
+"<div class='bot'>"+reply+"</div>";
+
+document.getElementById("msg").value="";
+
+document.getElementById("chat").scrollTop=
+document.getElementById("chat").scrollHeight;
+
+}
+</script>
+
+</body>
+</html>
