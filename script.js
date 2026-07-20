@@ -27,3 +27,13 @@ async function reply() {
     addMessage("❌ सर्वर से कनेक्ट नहीं हो पाया।", "bot");
   }
 }
+function addMessage(text, sender) {
+  const chatBox = document.getElementById("chatBox");
+
+  const message = document.createElement("div");
+  message.className = sender;
+  message.innerText = text;
+
+  chatBox.appendChild(message);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
