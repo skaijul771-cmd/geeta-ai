@@ -14,7 +14,12 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "gpt-5-nano",
-        input: message
+        input: [
+          {
+            role: "user",
+            content: message
+          }
+        ]
       })
     });
 
@@ -26,9 +31,9 @@ export default async function handler(req, res) {
 
     res.status(200).json({ reply });
 
-  } catch (err) {
+  } catch (error) {
     res.status(500).json({
-      error: err.message
+      error: error.message
     });
   }
 }
